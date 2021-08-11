@@ -1,0 +1,85 @@
+<div id="container">
+  <!-- populated by JS-->
+</div>
+<script src="./posts.js"></script>
+<script>
+  function renderPosts(posts, container) {
+    const len = posts.length; // posts is an array
+    var html = '';
+    for (let i = 0; i < len; i++) {
+      html += '<li class="post">' + // this "post" is never changed to boston in this example 
+        '<h2>' + posts[i].title + '</h2>' +
+        '<h3>' + posts[i].content + '</h3>'
+    }
+    container.innerHTML = '<ul id = "posts">' + html + '</ul>';
+  }
+  renderPosts(posts, document.getElementById('container'));
+</script>
+
+
+<script>
+//now i am going to edit this: instead of "posts" (line4 down all "posts").  renames posts.js line 4 to boston.js (his data set file of 20k).
+//this is a JSON file so what i need to do here is I need to put a 'var' and I am going to call it the 'boston'  This will be the data.  And I am going to save it.  
+// Ex. Line 1. var boston = {.  Priorto the dataset was a JSON file with no variable declaration.  John declares a var = boston and then seems to describe the data set immediately becoming a javascript datatset file with the var declaration addition.
+// big javascript files can be edited quite easily like this upon variable declaration from JSON => javascript file (1. var = boston).    
+//now I am going to go into the browser.  I am going to put this index.html file (all "posts" => "boston", 1. var = boston) INTO the browser.  
+// now i am going to go into the development environment and take a look at what boston looks like.  
+// he places the index.html file code into the browser with a breakpoint at line 16.  
+// he inputs the breakpoint at 16 and notices that "posts" has not been changed to boston.js...
+//he says there is often a problem that the browser will "cache data, and it will replay the cache." (Remember I changed those 2 Boston.  It picked up an old "cached file."
+//and so he goes into the top right and then "more tools".  There is clear Browsing Data.   And you need to click on Clear Browsing Data in "more tools".  Hit "clear data".
+//then he reloads the browers page (O)...  Now we have got the right data with Boston.js/boston instead of "posts" in the HTML code index.html file herein.. Now we are looking at the right file. 
+//now notce "boston" syntax if i hover over it says we have got some data in there.  We have go an object, and inside the object notice these columns.  
+//this means this is an object, and its got a property 'data'.  And that data looks like its an array. And its got a property 'meta.'
+//so if i wanted to access this, the whole object is called boston.  I'd have to put 'boston.data' and then we will see these specific arrays (22,233).
+//this is important because we are going to need to get a hold of it.  
+
+
+//Lets experiment here.  I am going to the Console.  And so, we are interacting now live with this program...
+// type in console:      boston;
+// and something called: {meta: {...}, data: Array (22233)};
+// and its an object, the curly braces.  I want to look at the data...how do i do that? #console...
+//well, I do '.data'in the console.  
+// > boston.data;
+//now thats all of this.... 
+// > (22233) [Array(20), Array(20), Array(20), Array(20),....]
+
+// now he input 'var b' and I am going to call it 'boston data';
+// > var b = boston.data;
+//< undefined;
+// > b; //now is this array of (22233);
+// > b
+// < [ spits out 22233 arrays];
+
+// suppose instead of b I put b0.....
+// 'b[0]'; that wood give me that element that very first first array of 20 - [Array(20], and here it is... (index 0)... 
+//then he clicks the carrot arrow in the Array(20) output in the console and he review the data set of 20...
+// and he is looking for 'salary data';
+//line 11 looks like a salary of some kind. Line 18 looks like another dollar amount.  We need to find out what each of these is....
+// and to do that we might need to look at the 'metadata'....
+//but we can guess what some of those things are...
+//I'm going to print out '8' and '11';
+//okay? Because I think thats the name (8), and that might be the salary (11) or that might be, we need to find out...
+
+
+// Okay, so lets go back now to program (herein index.html VS).  So, in porgramming, I changed all the 'posts' to 'boston.' So thats ok.'
+//he double checks that "posts" is still switched to boston, boston.js.  Which is still good.  
+//'Boston is the basic array, i need to get 'boston.data'....
+//so now he changes line 7.  he deletes the entire line 7.  const boston. length deleted...
+// line 7 is chnaged to var people = boston.data 
+//then he inputs this right below line 7 without deleting anything else....
+//var nlen = boston.data.length; (which we think is something like 22k).
+//so now this need to loop over, ill call it len, whatever it is the 22k....
+//he changed <h2> tag, line 11, from boston to person[i] - the 'ith' person...
+//he changhes the <h3> tag, line 12, from boston to person[i]....
+// OK this is an array now, so if i want to pick out the name, i change .title to .[8] - the 8th element. - person[i].[8] (see line 61)..
+//so we put bracket and I think that was '11' we said (see line 61).  - person[i].[11] in <h3> tag...
+// save it, go back to the intial browser/console.  reload the page... 
+//OK it ran... So now we have got a list of all these people with salary values.  And so what we want you to do is to list out the top 5 sarlaries.  
+// and also to tell us, how many people earn over 100k
+
+//OK so in boston who are the top 5 earners, and what do they earn? And how mnay people earn over 100k?
+// OK good luck it should give you experience with handling really large data.
+
+
+</script>
